@@ -28,6 +28,9 @@
             <a class="navbar-brand text-dark" href="Index.html">
                 <h5 class="my-0 mr-md-auto font-weight-bold">RFHealth</h5>
             </a>
+            <a class="text-primary font-weight-bold text-decoration-none" style="font-size:20px"; href="<?php echo(base_url()); ?>PaginaPrincipal">
+                <?php echo($this->session->userdata('user')['nombre']); ?>
+            </a>
             <a href="#navbarSupportedContent">
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

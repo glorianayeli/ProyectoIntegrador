@@ -14,17 +14,27 @@
     
         function ValidarUsuario($usuario,$password){
             /*Si devuelve una fila el usuario existe sino no existe */
-            $this->db->WHERE('Correo',$usuario);
+            /*$this->db->WHERE('Correo',$usuario);
             $this->db->WHERE('pass',$password);
             $existeUsuario = $this->db->get('usuarios');
-
             if($existeUsuario->num_rows()>0)
             {
-                return true;
+                return $existeUsuario;
             }else
             {
                 return false;
-            }
+            }*/
+            $response = 
+                $this->db
+                    ->SELECT('*')
+                    ->FROM('usuarios')
+                    ->WHERE("Correo = '".$usuario."'")
+                    ->WHERE("Pass = '".$password."'")
+                    ->get();
+
+            // echo $this->db->last_query();
+
+            return ($response->num_rows() > 0) ? $response->row(0) : false;
         }
     }
     

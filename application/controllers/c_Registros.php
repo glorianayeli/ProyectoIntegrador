@@ -23,14 +23,19 @@ class C_Registros extends CI_Controller {
             'ApellidoMaterno' => $this->input->post('ApellidoMaterno'),
             'Correo' => $this->input->post('email'),
             'puesto' => $this->input->post('puesto'),
-            'edad' => $this->input->post('edad'),
             'genero' => $this->input->post('Genero'),
             'pass'=>md5($_POST['pass'])
             
         );
-        $status = $this->Registros_model->crearRegistro($data,$status);
+        $usuario = $this->input->post('email');
+        $status = $this->Registros_model->crearRegistro($data,$status,$usuario);
         if($status==true){
             redirect('index.php', 'refresh');
+            
+        }
+        else
+        {
+            redirect('c_Registros');
         }
     }
 }

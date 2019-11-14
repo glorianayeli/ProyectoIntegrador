@@ -2,7 +2,7 @@
 <body>
     <header class="">
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm col-xs-12">
-            <a class="navbar-brand text-dark" href="Index.html">
+            <a class="navbar-brand text-dark" href="<?php echo (base_url()); ?>index">
                 <h5 class="my-0 mr-md-auto font-weight-bold">RFHealth</h5>
             </a>
         </nav>
@@ -18,13 +18,8 @@
 
             <label for="inputPassword" class="sr-only">Contraseña:</label>
             
-            <input type="password" id="inputPassword" class="form-control col-8 col-lg-4 col-md-4  mx-auto mt-2" placeholder="Contraseña" required="" name="Contraseña">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me" class="mt-2"> Recordarme
-                </label>
-            </div>
-            <div class="">
+            <input type="password" id="inputPassword" class="form-control col-8 col-lg-4 col-md-4  mx-auto mt-3" placeholder="Contraseña" required="" name="Contraseña">
+            <div class="mt-2">
                 <a href="<?php echo (base_url()); ?>c_Registros"><span class="">Registrarse</span></a>
             </div>
             <button class="btn btn-lg btn-primary btn-block col-6 col-md-3 mx-auto mt-2" type="submit">Iniciar

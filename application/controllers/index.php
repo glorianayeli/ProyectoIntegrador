@@ -20,15 +20,26 @@ class Index extends CI_Controller {
 	public function IniciarSesion(){
         if(isset($_POST['Contraseña'])){
             $this->load->model('mod_index');
-            if($this->mod_index->ValidarUsuario($_POST['Correo'],md5($_POST['Contraseña']))){
-                $this->session->set_userdata('Correo',$_POST['Correo']);
-                redirect('PaginaPrincipal');
-            }
-            else{
-                redirect('index#bad-password');
-            }
+            $usuario = $this->mod_index->ValidarUsuario($this->input->post('Correo'), md5($_POST['Contraseña']));
+                /*$this->session->set_userdata('Nombre',$usuario['Nombre']);*/
+                if($usuario){
+                     //$this->session->set_userdata('Correo',$_POST['Correo']);
+                    $this->session->set_userdata(
+                        'user', 
+                        array(
+                            'id' => $usuario->ID,
+                            'correo' => $usuario->Correo,
+                            'nombre' => $usuario->Nombre
+                        )
+                    );
+                    redirect('PaginaPrincipal');
+                }    
+                else{
+                    redirect('index#bad-password');
+                }
         }   
     }
+
     public function cerrarSesion(){
         $this->session->sess_destroy();
         redirect('index');

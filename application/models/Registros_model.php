@@ -7,9 +7,14 @@ class Registros_model extends CI_Model {
         $this->load->library('session');
     }
 
-    function crearRegistro($data,$status){
-        $this->db->insert('usuarios',$data);
-        $status=true;
+    function crearRegistro($data,$status,$usuario){
+        $this->db->WHERE('Correo',$usuario);
+        $existeUsuario = $this->db->get('usuarios');
+        if(($_POST['email']==$_POST['emailconfirm'])&&($_POST['pass']&&$_POST['passconfirm'])&&$existeUsuario->num_rows()==0)
+        {
+            $this->db->insert('usuarios',$data);
+            $status=true;
+        }
         return $status;
     }
 }
