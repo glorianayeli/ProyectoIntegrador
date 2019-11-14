@@ -8,6 +8,11 @@
     </header>
     <div class="col-md-8 order-md-1 container">
         <h4 class="mb-3 mt-4">Registro</h4>
+        <?php if($registroError = $this->session->flashdata('registroError')):?>
+            <div class="alert alert-danger text-center col-4 text-center mx-auto">
+                <?php echo $this->session->flashdata('registroError'); ?>
+            </div>
+        <?php endif; ?>
         <form class="needs-validation col-8 mx-auto" novalidate="" action="<?php echo(base_url('c_Registros/RecibirDatos'))?>" method="POST">
             <div class="mb-3">
                 <label for="firstName">Nombre</label>

@@ -9,7 +9,7 @@ class Index extends CI_Controller {
 	
 	public function index()
 	{
-        if($this->session->userdata('Correo')){
+        if($this->session->userdata('user')){
             redirect('PaginaPrincipal');
         }
 		$this->load->view('/layouts/header.php');
@@ -35,7 +35,8 @@ class Index extends CI_Controller {
                     redirect('PaginaPrincipal');
                 }    
                 else{
-                    redirect('index#bad-password');
+                    $this->session->set_flashdata('error','contraseña o correo electrónico incorrecto');
+                    return redirect('index');
                 }
         }   
     }

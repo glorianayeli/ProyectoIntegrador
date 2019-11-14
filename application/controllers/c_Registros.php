@@ -30,11 +30,13 @@ class C_Registros extends CI_Controller {
         $usuario = $this->input->post('email');
         $status = $this->Registros_model->crearRegistro($data,$status,$usuario);
         if($status==true){
-            redirect('index.php', 'refresh');
+            $this->session->set_flashdata('registroExitoso','Su registro fue exitoso');
+            redirect('index');
             
         }
         else
         {
+            $this->session->set_flashdata('registroError','Algo fallo en su registro');
             redirect('c_Registros');
         }
     }
