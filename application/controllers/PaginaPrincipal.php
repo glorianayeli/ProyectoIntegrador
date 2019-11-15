@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class PaginaPrincipal extends CI_Controller {
+class PaginaPrincipal extends MY_Controller {
     function __construct(){
 		parent::__construct();
 		$this->load->helper('url');

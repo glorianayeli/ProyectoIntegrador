@@ -9,7 +9,7 @@
     </header>
     <main class="text-center">
         <form class="form-signin my-auto" action="<?php echo(base_url()) ?>index/IniciarSesion" method="POST">
-            <img class="mt-5" style=" width:30%;" src="assets/img/rfhealth.png" alt="">
+            <img class="mt-3" style=" width:30%;" src="assets/img/rfhealth.png" alt="">
             <h1 class="h3 mb-3 font-weight-normal">Inicio de sesión</h1> 
             <?php if($error = $this->session->flashdata('error')):?>
                 <div class="alert alert-danger text-center col-4 text-center mx-auto">
