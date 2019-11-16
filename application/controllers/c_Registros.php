@@ -7,10 +7,11 @@ class C_Registros extends MY_Controller {
 		$this->load->helper('url');
         $this->load->library('session');
         $this->load->model('Registros_model');
+        $this->ValidarInicioSesion();
     }
 
     public function index(){
-        $this->load->view('/layouts/header.php');
+        $this->load->view('/layouts/head.php');
         $this->load->view('/Usuario/Registro.php');
         $this->load->view('/layouts/footer.php');
     }

@@ -1,7 +1,7 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm col-xs-12">
-            <a class="navbar-brand text-dark" href="<?php echo (base_url()); ?>index">
+            <a class="navbar-brand text-dark">
                 <h5 class="my-0 mr-md-auto font-weight-bold">RFHealth</h5>
             </a>
         </nav>

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Index extends MY_Controller {
     function __construct(){
 		parent::__construct();
-		$this->load->helper('url');
+        $this->load->helper('url');
     }
 	
 	public function index()
@@ -12,7 +12,7 @@ class Index extends MY_Controller {
         if($this->session->userdata('user')){
             redirect('PaginaPrincipal');
         }
-		$this->load->view('/layouts/header.php');
+		$this->load->view('/layouts/head.php');
 		$this->load->view('/Usuario/Index.php');
 		$this->load->view('/layouts/footer.php');
 	}

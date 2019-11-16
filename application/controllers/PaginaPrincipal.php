@@ -6,9 +6,11 @@ class PaginaPrincipal extends MY_Controller {
 		parent::__construct();
 		$this->load->helper('url');
         $this->load->library('session');
+        $this->ValidarInicioSesion();
     }
 
     public function index(){
+        $this->load->view('/layouts/head.php');
         $this->load->view('/layouts/header.php');
         $this->load->view('/Usuario/PaginaPrincipalUsuario.php');
         $this->load->view('/layouts/footer.php');
