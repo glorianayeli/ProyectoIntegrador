@@ -7,10 +7,16 @@ class Estadisticas extends MY_Controller {
 		$this->load->helper('url');
         $this->load->library('session');
         $this->ValidarInicioSesion();
+        $this->load->model('mod_estadisticas');
     }
 
     public function index(){
         $this->load->view('/Usuario/EstadisticasUsuario.php');
+    }
+    public function getTemperatura(){
+        $result = $this->mod_estadisticas->getTemperatura();
+        //var_dump($result);
+        echo json_encode($result);
     }
 }
 ?>

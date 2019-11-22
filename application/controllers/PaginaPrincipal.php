@@ -7,13 +7,19 @@ class PaginaPrincipal extends MY_Controller {
 		$this->load->helper('url');
         $this->load->library('session');
         $this->ValidarInicioSesion();
+        $this->load->model('mod_paginaprincipal');
     }
 
     public function index(){
+        $result = $this->mod_paginaprincipal->ultimoId();
+        $data = array('consulta'=>$result);
         $this->load->view('/layouts/head.php');
         $this->load->view('/layouts/header.php');
-        $this->load->view('/Usuario/PaginaPrincipalUsuario.php');
+        $this->load->view('/Usuario/PaginaPrincipalUsuario.php',$data);
         $this->load->view('/layouts/footer.php');
+    }
+    public function showmedicion(){
+        
     }
 }
 ?>

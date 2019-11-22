@@ -29,14 +29,14 @@
         // Define los recursos js base
         public function DefineJsResources()
         {
-            $this->carabiner->js('https://code.jquery.com/jquery-3.3.1.slim.min.js');
             $this->carabiner->js('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js');
             $this->carabiner->js('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js');
             $this->carabiner->js('https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js');
             // an array of arrays
             $this->carabiner->js(array(
                 array('assets/js/Chart.min.js'),
-                array('assets/js/Chart.bundle.min.js')
+                array('assets/js/Chart.bundle.min.js'),
+                array('assets/js/jquery.js')
             ));
         }
         // Valida que exista una sesión activa
