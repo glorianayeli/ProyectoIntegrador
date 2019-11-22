@@ -12,7 +12,7 @@
             $this->db->initialize();
         }
         public function getTemperatura(){
-            $this->db->select('Temperatura,Fecha');
+            $this->db->select('Temperatura,Fecha,Humedad');
 		    $this->db->from('mediciones');
 		    $query = $this->db->get();		
 		    return $query->result();

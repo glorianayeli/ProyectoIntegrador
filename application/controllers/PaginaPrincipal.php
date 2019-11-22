@@ -11,15 +11,12 @@ class PaginaPrincipal extends MY_Controller {
     }
 
     public function index(){
-        $result = $this->mod_paginaprincipal->ultimoId();
-        $data = array('consulta'=>$result);
-        $this->load->view('/layouts/head.php');
-        $this->load->view('/layouts/header.php');
-        $this->load->view('/Usuario/PaginaPrincipalUsuario.php',$data);
+        $this->load->view('/Usuario/PaginaPrincipalUsuario.php');
         $this->load->view('/layouts/footer.php');
     }
-    public function showmedicion(){
-        
+    public function showMedicion(){
+        $result = $this->mod_paginaprincipal->ultimoId();
+        echo json_encode($result);
     }
 }
 ?>

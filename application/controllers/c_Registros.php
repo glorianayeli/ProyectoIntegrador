@@ -11,6 +11,7 @@ class C_Registros extends MY_Controller {
     }
 
     public function index(){
+        $this->load->view('/layouts/header.php');
         $this->load->view('/layouts/head.php');
         $this->load->view('/Usuario/Registro.php');
         $this->load->view('/layouts/footer.php');

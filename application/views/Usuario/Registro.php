@@ -1,11 +1,4 @@
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm col-xs-12">
-            <a class="navbar-brand text-dark">
-                <h5 class="my-0 mr-md-auto font-weight-bold">RFHealth</h5>
-            </a>
-        </nav>
-    </header>
     <div class="col-md-8 order-md-1 container">
         <h4 class="mb-3 mt-4">Registro</h4>
         <?php if($registroError = $this->session->flashdata('registroError')):?>
