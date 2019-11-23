@@ -81,7 +81,7 @@
     <script>
         getTemperaturaHumedad();
         function activarTiempo() {
-            setTimeout(getTemperaturaHumedad,50000);
+            setTimeout(getTemperaturaHumedad,3000);
         }
         function getTemperaturaHumedad() {
             console.log('xd');
@@ -94,7 +94,7 @@
                     $('#Temperatura').remove();
                     $('#contenedorTemperatura').append("<p class='card-text' id='Temperatura' style='font-size:110px;'>"+parametrosTemperatura+"°C</p>");
                     $('#Humedad').remove();
-                    $('#contenedorHumedad').append("<p class='card-text' id='Humedad' style='font-size:110px;'>"+parametrosHumedad+"</p>");
+                    $('#contenedorHumedad').append("<p class='card-text' id='Humedad' style='font-size:110px;'>"+parametrosHumedad+" %</p>");
             });
             activarTiempo();
         }   
