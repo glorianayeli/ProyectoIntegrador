@@ -30,12 +30,7 @@ function Header()
     $this->Cell(60, 10, 'Temperatura', 1, 0, 'C',0);
     $this->Cell(70, 10, 'Humedad', 1, 0, 'C',0);
     $this->Ln();
-    foreach($res as $dato){
-        $this->Cell(60, 10, $dato['Fecha'], 1, 0, 'C',0);
-        $this->Cell(60, 10, $dato['Temperatura'], 1, 0, 'C',0);
-        $this->Cell(70, 10, $dato['Humedad'], 1, 0, 'C',0);
-        $this->Ln();
-    }
+   
     
     
 }
