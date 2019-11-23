@@ -77,29 +77,30 @@
     <footer>
 
     </footer>
+    <!--Script obtener mediciones-->
     <script>
-    getTemperaturaHumedad();
-    function activarTiempo() {
-        setTimeout(getTemperaturaHumedad,2000);
-    }
-    function getTemperaturaHumedad() {
-        console.log('xd');
-        $.post("<?php echo base_url()?>PaginaPrincipal/showMedicion",
-            function (data) {
-                var getMedicion = JSON.parse(data);
-                var parametrosTemperatura = getMedicion.Temperatura;
-                var parametrosHumedad = getMedicion.Humedad;
-                //Eliminar y crear la etiqueta canvas
-                $('#Temperatura').remove();
-                $('#contenedorTemperatura').append("<p class='card-text' id='Temperatura' style='font-size:110px;'>"+parametrosTemperatura+"°C</p>");
-                $('#Humedad').remove();
-                $('#contenedorHumedad').append("<p class='card-text' id='Humedad' style='font-size:110px;'>"+parametrosHumedad+"</p>");
+        getTemperaturaHumedad();
+        function activarTiempo() {
+            setTimeout(getTemperaturaHumedad,50000);
+        }
+        function getTemperaturaHumedad() {
+            console.log('xd');
+            $.post("<?php echo base_url()?>PaginaPrincipal/showMedicion",
+                function (data) {
+                    var getMedicion = JSON.parse(data);
+                    var parametrosTemperatura = getMedicion.Temperatura;
+                    var parametrosHumedad = getMedicion.Humedad;
+                    //Eliminar y crear la etiqueta canvas
+                    $('#Temperatura').remove();
+                    $('#contenedorTemperatura').append("<p class='card-text' id='Temperatura' style='font-size:110px;'>"+parametrosTemperatura+"°C</p>");
+                    $('#Humedad').remove();
+                    $('#contenedorHumedad').append("<p class='card-text' id='Humedad' style='font-size:110px;'>"+parametrosHumedad+"</p>");
+            });
+            activarTiempo();
+        }   
+        document.addEventListener('DOMContentLoaded', function (event) {
+            activarTiempo();
         });
-        activarTiempo();
-    }   
-    document.addEventListener('DOMContentLoaded', function (event) {
-        activarTiempo();
-    });
     </script>
 </body>
 

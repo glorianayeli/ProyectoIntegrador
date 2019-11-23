@@ -76,14 +76,13 @@
         </div>
         <div class="text-center">
             <button type="button" class="btn btn-info mt-3 mb-2 mr-5">Descargar historial</button>
-            <input type="button" id="btnBuscar" class="btn btn-info mt-3 mb-2 mr-5" value="Gráficar">
         </div>
     </main>
     <!--Script de las tablas-->
     <script> 
         crearGrafica();
         function activarTiempo() {
-            setTimeout(crearGrafica,2000);
+            setTimeout(crearGrafica,50000);
         }
         function crearGrafica(){
             $.post("<?php echo base_url()?>estadisticas/getTemperatura",
