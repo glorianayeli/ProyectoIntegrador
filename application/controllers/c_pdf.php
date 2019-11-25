@@ -11,14 +11,7 @@ class C_pdf extends MY_Controller {
     }
     function datoschidos(){
         $res['data'] = $this->mod_datos->getDatosChidos();
-        echo json_encode($res);
         $this->load->view('Usuario/pdf', $res);
-
-        print_r ($res);
-        echo $res;
-        var_dump ($res);
-      
-
     }
 }
 ?>
